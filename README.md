@@ -1,7 +1,7 @@
 ### Restaurant Reviews
 
 You are creating an online review app for your restaurant, "Everything But Fish". Users can post reviews, 
-as long as they are do not exceed 250 characters and there is no mention of 'fish'.
+as long as they do not exceed 250 characters and there is no mention of 'fish'.
 
 The `StringValidator` class contains methods to do these checks. Implement the methods contained in `StringValidator`
 so that they return successfully if the validation passes, and throw an `InvalidStringException` if the validation 

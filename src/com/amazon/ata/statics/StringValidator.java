@@ -2,6 +2,8 @@ package com.amazon.ata.statics;
 
 public final class StringValidator {
 
+    private static final String FORBIDDEN_WORD = "fish";
+    private static final int MAX_LENGTH = 250;
     // Create a private constructor so StringValidator objects cannot be created.
     private StringValidator() {}
 
@@ -12,7 +14,10 @@ public final class StringValidator {
      * @throws InvalidStringException if the input contains a forbidden string
      */
     public static void containsForbiddenWord(String input) throws InvalidStringException {
-        throw new InvalidStringException("The given String contains a forbidden word.");
+        if (input.toLowerCase().contains(FORBIDDEN_WORD)) {
+            throw new InvalidStringException("The given String contains a forbidden word.");
+        }
+
     }
 
     /**
@@ -22,6 +27,9 @@ public final class StringValidator {
      * @throws InvalidStringException checks to see if the input is a forbidden string
      */
     public static void greaterThanMaxLength(String input) throws InvalidStringException {
-        throw new InvalidStringException("The given String has a length greater than the max length allowed.");
+        if (input.length() >= MAX_LENGTH) {
+            throw new InvalidStringException("The given String has a length greater than the max length allowed.");
+        }
+
     }
 }
